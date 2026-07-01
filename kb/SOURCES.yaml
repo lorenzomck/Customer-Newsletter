@@ -1,0 +1,157 @@
+version: 1
+as_of: "2026-07-01"
+last_run_date: "2026-07-01"
+sources:
+  - id: "gh_changelog"
+    name: "GitHub Changelog"
+    vendor: "GitHub"
+    section: "A"
+    source_type: ["changelog"]
+    canonical_urls:
+      - "https://github.blog/changelog/"
+    update_feeds:
+      - type: "rss"
+        url: "https://github.blog/changelog/feed/"
+    applies_to: ["general", "enterprise", "web"]
+    portability: "portable"
+    what_it_is: "Primary changelog for all GitHub product changes"
+
+  - id: "gh_blog"
+    name: "GitHub Blog"
+    vendor: "GitHub"
+    section: "A"
+    source_type: ["changelog"]
+    canonical_urls:
+      - "https://github.blog/"
+    update_feeds:
+      - type: "rss"
+        url: "https://github.blog/feed/"
+    applies_to: ["general"]
+    portability: "portable"
+    what_it_is: "GitHub corporate blog including news-insights and product announcements"
+
+  - id: "gh_copilot_docs"
+    name: "GitHub Copilot Docs"
+    vendor: "GitHub"
+    section: "A"
+    source_type: ["docs"]
+    canonical_urls:
+      - "https://docs.github.com/en/copilot"
+    update_feeds:
+      - type: "none"
+        url: ""
+    applies_to: ["general", "enterprise"]
+    portability: "portable"
+    what_it_is: "Official Copilot documentation"
+
+  - id: "vscode_release_notes"
+    name: "VS Code Release Notes"
+    vendor: "Microsoft"
+    section: "B"
+    source_type: ["release-notes"]
+    canonical_urls:
+      - "https://code.visualstudio.com/updates"
+    update_feeds:
+      - type: "none"
+        url: ""
+    applies_to: ["vscode"]
+    portability: "platform-specific"
+    what_it_is: "Monthly VS Code release notes with Copilot integration details"
+
+  - id: "vs_devblogs"
+    name: "Visual Studio DevBlogs"
+    vendor: "Microsoft"
+    section: "B"
+    source_type: ["changelog"]
+    canonical_urls:
+      - "https://devblogs.microsoft.com/visualstudio/"
+    update_feeds:
+      - type: "rss"
+        url: "https://devblogs.microsoft.com/visualstudio/feed/"
+    applies_to: ["visual_studio"]
+    portability: "platform-specific"
+    what_it_is: "Visual Studio team blog with Copilot monthly updates"
+
+  - id: "vs_release_notes"
+    name: "Visual Studio Release Notes"
+    vendor: "Microsoft"
+    section: "B"
+    source_type: ["release-notes"]
+    canonical_urls:
+      - "https://learn.microsoft.com/en-us/visualstudio/releases/2022/release-notes"
+    update_feeds:
+      - type: "none"
+        url: ""
+    applies_to: ["visual_studio"]
+    portability: "platform-specific"
+    what_it_is: "MS Learn rolling release notes for Visual Studio patches"
+
+  - id: "jetbrains_plugin"
+    name: "JetBrains Copilot Plugin"
+    vendor: "JetBrains"
+    section: "B"
+    source_type: ["marketplace", "api"]
+    canonical_urls:
+      - "https://plugins.jetbrains.com/plugin/17718-github-copilot"
+    update_feeds:
+      - type: "api"
+        url: "https://plugins.jetbrains.com/api/plugins/17718/updates"
+    applies_to: ["jetbrains"]
+    portability: "platform-specific"
+    what_it_is: "JetBrains plugin marketplace listing with version history"
+
+  - id: "xcode_copilot"
+    name: "Copilot for Xcode"
+    vendor: "GitHub"
+    section: "B"
+    source_type: ["repo"]
+    canonical_urls:
+      - "https://github.com/github/CopilotForXcode"
+    update_feeds:
+      - type: "none"
+        url: ""
+    applies_to: ["xcode"]
+    portability: "platform-specific"
+    what_it_is: "GitHub Copilot for Xcode CHANGELOG on GitHub"
+
+  - id: "azure_devops_blog"
+    name: "Azure DevOps Blog"
+    vendor: "Microsoft"
+    section: "B"
+    source_type: ["changelog"]
+    canonical_urls:
+      - "https://devblogs.microsoft.com/devops/"
+    update_feeds:
+      - type: "rss"
+        url: "https://devblogs.microsoft.com/devops/feed/"
+    applies_to: ["general"]
+    portability: "portable"
+    what_it_is: "Azure DevOps team blog"
+
+  - id: "gh_resources"
+    name: "GitHub Resources"
+    vendor: "GitHub"
+    section: "C"
+    source_type: ["docs"]
+    canonical_urls:
+      - "https://resources.github.com/"
+    update_feeds:
+      - type: "none"
+        url: ""
+    applies_to: ["general", "enterprise"]
+    portability: "portable"
+    what_it_is: "Guides, whitepapers, webinars, and training content"
+
+  - id: "copilot_cli_releases"
+    name: "Copilot CLI Releases"
+    vendor: "GitHub"
+    section: "A"
+    source_type: ["repo"]
+    canonical_urls:
+      - "https://github.com/github/copilot-cli/releases"
+    update_feeds:
+      - type: "atom"
+        url: "https://github.com/github/copilot-cli/releases.atom"
+    applies_to: ["cli"]
+    portability: "portable"
+    what_it_is: "Copilot CLI release stream with daily releases"
