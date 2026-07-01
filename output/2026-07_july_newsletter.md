@@ -1,4 +1,4 @@
-# GitHub Customer Newsletter - June 2026
+# GitHub Customer Newsletter - July 2026
 
 ## Introduction
 
