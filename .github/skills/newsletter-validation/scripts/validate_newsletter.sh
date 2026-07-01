@@ -36,7 +36,7 @@ if ! grep -q "lorenzomck/Customer-Newsletter" "$FILE"; then
 fi
 
 # Check forbidden patterns
-if grep -P '(?<!\[)https?://\S+(?!\))' "$FILE" | grep -v '^\[' | head -5 | grep -q .; then
+if grep -E '(?<!\[)https?://\S+(?!\))' "$FILE" | grep -v '^\[' | head -5 | grep -q .; then
   echo "WARN: Possible raw URLs detected"
   WARNINGS=$((WARNINGS+1))
 fi
