@@ -1,0 +1,46 @@
+name: CI Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Structure validation
+        run: make validate-structure
+
+      - name: Skill validation
+        run: make validate-all-skills
+
+      - name: Newsletter validation (all outputs)
+        run: |
+          for f in output/*.md; do
+            [ -f "$f" ] || continue
+            echo "Validating: $f"
+            make validate-newsletter FILE="$f"
+          done

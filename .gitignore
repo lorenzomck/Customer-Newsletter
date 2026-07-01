@@ -1,0 +1,15 @@
+# Pipeline intermediates
+workspace/*
+!workspace/.gitkeep
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Benchmark scratch
+benchmark/
